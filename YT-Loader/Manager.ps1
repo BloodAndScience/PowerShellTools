@@ -63,16 +63,18 @@ if(Test-Path $fullPath)
     else
     { mkdir $folderName}
     echo "Made $fullPath"
-    
-    CheckIfFolderExist $fullPath $p  }
-function YT-Init {
-$listF = 'B:\Lib\Proj\PS\YT-Loader\Resources\UnityShort.list' 
-
- cd $basefolder
-$playL = Get-Content $listF | Select-Object 
-echo "Loaded  $($playl.count)  Playslists"
-$i =0
-foreach($p in $playL) {
-    DownloadListParalel $p
+    CheckIfFolderExist $fullPath $p  
 }
 
+function YT-Init ($listF) {
+#$listF = 'B:\Lib\Proj\PS\YT-Loader\Resources\UnityShort.list' 
+$playL = Get-Content $listF | Select-Object 
+echo "Loaded  $($playl.count)  Playslist $listF"
+$i =0
+foreach($p in $playL) {
+    if($p.Contains("youtube.com"))
+    {
+    DownloadListParalel $p
+    }
+}
+}

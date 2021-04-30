@@ -7,7 +7,15 @@ function MergeAudioVideo($files){
     rm *.webm
 }
 
-function DownloadPlaylist($link){
+function youtube-list($link){
+
+
+        $folderName = youtube-dl --get-filename  --playlist-item 1 -o '%(playlist)s' $link
+        $folderName = $gl+$folderName
+
+        mkdir $folderName
+        cd $folderName
+        echoe made folder $folderName
 
         youtube-dl -i -o '%(playlist_index)s - %(title)s.webm' -f 'webm' $link
         youtube-dl -i -o '%(playlist_index)s - %(title)s.m4a' -f 'bestaudio' $link
