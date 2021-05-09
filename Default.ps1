@@ -11,7 +11,8 @@ clear
 $path = "B:\Lib\Proj\PS\"
 .$path"YT-Loader\YTTools.ps1"
 
-$todo = "B:\Res\Data\todo\"
+$todo = "B:\Res\Data\todo"
+$pls =  "B:\Res\AppData\Roaming\AIMP\PLS"
 
 Set-Variable -name DONE_FILE -value $todo'done.txt'
 Set-Variable -name TODO_FILE -value $todo'\todo.txt'
