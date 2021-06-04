@@ -27,14 +27,10 @@ function discord {
 	Start-Job { Invoke-Item "D:\Users\admin\AppData\Local\Discord\app-1.0.9002\Discord.exe"}
 	}
 
-Start-Job { NetDisabler /D /T 2}>>""
 
 $path = "B:\Lib\Proj\PS\"
 
 $dns = "C:\Windows\System32\drivers\etc\hosts"
-
-.$path"YT-Loader\YTTools.ps1"
-
 $todo = "B:\Lib\Data\todo"
 $pls =  "B:\Res\AppData\Roaming\AIMP\PLS"
 
@@ -45,6 +41,9 @@ Set-Variable -name pTodo -value $todo'\personal.txt'
 Set-Variable -name DirVideos -value '\\home-server\Lib\Videos'
 Set-Alias -name t -value todo
 
+#Methods Invoke 
 
+Start-Job { NetDisabler /D /T 2}>>""
+.$path"YT-Loader\YTTools.ps1"
 
 cls
