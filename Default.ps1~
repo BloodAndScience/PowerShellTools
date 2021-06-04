@@ -27,7 +27,7 @@ function discord {
 	Start-Job { Invoke-Item "D:\Users\admin\AppData\Local\Discord\app-1.0.9002\Discord.exe"}
 	}
 
-Start-Job { NetDisabler /D /T 2}>>""
+# Start-Job { NetDisabler /D /T 2}>>""
 
 $path = "B:\Lib\Proj\PS\"
 

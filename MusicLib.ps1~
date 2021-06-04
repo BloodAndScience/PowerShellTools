@@ -1,0 +1,26 @@
+function ConvertAndCommit (){
+
+	ConvertMusic
+	CommitMusic
+}
+
+function CommitMusic () {
+
+	rm *.flac
+	$p = $(gl).Path
+	$fn = $p -replace 'B:\\Res\\Music\\'
+	git add *
+	git commit -m $($fn)
+	git push
+ }
+
+ function ConvertMusic()  {
+	foreach($f in $(ls)){
+		if($f.Name -match ".flac$"){
+		$name = $($f.Name -replace ".flac")
+		$name =  $($name + ".mp3")
+		ffmpeg -i $f.Name $name
+		echo $name
+		}
+	}
+ }
