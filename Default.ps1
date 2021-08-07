@@ -5,13 +5,18 @@ function codeD {
 
 }
 
-function unityD {
+function unityC($name="NewUnity") {
+
+        cd 'B:\Git\'
+	echo "Moved to B:\Git"
+	cp 'B:\Lib\Proj\MyIDE\Templates\NewUnity.7z'
+	echo "Copied NewUnity.7z"
+	7z x 'B:\Lib\Proj\MyIDE\Templates\NewUnity.7z'
+	echo "Extracted NewUnity.7z"
+	mv NewUnity $name
+	echo "Moved to "+$name
+	cd $name
 	Unity -projectPath $(gl)
-}
-
-function unityC {
-
-	Unity -createProject $(gl)
 }
 
 function hp {
@@ -70,12 +75,12 @@ Set-Variable -name TODO_FILE -value $todo'\todo.txt'
 
 Set-Alias -name t -value todo
 Set-Alias -Name edge -Value 'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe'
-Set-Alias -Name hr -Value 'B:\MyPrograms\HeartRate\HeartRate.exe'
+Set-Alias -Name hr -Value 'B:\MyPrograms\CLI\HeartRate\HeartRate.exe'
 
 
 #Methods Invoke 
 
-Start-Job { NetDisabler /D /T 2}>>""
+#Start-Job { NetDisabler /D /T 2}>>""
 .$path"YT-Loader\YTTools.ps1"
 
 

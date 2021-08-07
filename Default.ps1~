@@ -75,7 +75,7 @@ Set-Alias -Name hr -Value 'B:\MyPrograms\HeartRate\HeartRate.exe'
 
 #Methods Invoke 
 
-Start-Job { NetDisabler /D /T 2}>>""
+#Start-Job { NetDisabler /D /T 2}>>""
 .$path"YT-Loader\YTTools.ps1"
 
 
