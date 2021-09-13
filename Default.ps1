@@ -19,6 +19,10 @@ function unityC($name="NewUnity") {
 	Unity -projectPath $(gl)
 }
 
+#function plantuml {
+#   Param($ma) 
+#   plantuml.jar $ma }
+
 function hp {
    Param($ma) 
    if($ma.Length -eq 0) {
